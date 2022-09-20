@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/day02/out0.css" />
+    <style>
+      textarea {
+        background: aqua;
+      }
+      #find {
+        background: black;
+        color: white;
+      }
+      .login {
+        background: blue;
+        border-color: lime;
+      }
+      #signup {
+        color: blanchedalmond;
+        font-weight: bold;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .phone {
+        color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h3>검색할 단어를 입력하세요.</h3>
+      <hr />
+      검색할 단어 <input type="text" name="find" id="find" />
+      <button>검색시작</button>
+    </form>
+
+    <hr />
+
+    <form action="">
+      <h3>로그인 화면</h3>
+      아이디 <input type="text" name="id" class="login" /> <br />
+      비밀번호 <input type="password" name="pw" class="login" />
+      <input type="submit" value="로그인 처리" />
+    </form>
+
+    <hr />
+    <form action="">
+      <h3>회원가입 화면</h3>
+      가입할 id <input type="text" name="id" id="signup" /> <br />
+      가입할 pw <input type="text" name="pw" id="signup" /> <br />
+      가입할 name <input type="text" name="name" id="signup" /> <br />
+      성별 남자 <input type="radio" name="gender" /> 여자
+      <input type="radio" name="gender" />
+      <br />
+      취미 <input type="checkbox" name="hobby" value="run" /> 달리기
+      <input type="checkbox" name="hobby" value="run" /> 동영상보기
+      <input type="checkbox" name="hobby" value="run" /> 인터넷서핑
+      <br />
+      전화번호 통신사
+      <select class="phone">
+        <option>SKT</option>
+        <option>LGT</option>
+        <option>KT</option>
+        <option selected>알뜰폰</option>
+      </select>
+      <input type="number" /> <br />
+      생년월일 <input type="date" /> <br />
+      가입한 시기 <input type="" /> 하고 싶은 말
+      <textarea cols="30" rows="5" placeholder="100글자로 써주세요."></textarea
+      ><br />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/day02/out0.css">
+    <style>
+        td{
+            background: black;
+            color: white;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="check">
+        <h3>회원가입</h3>
+        <table border="1">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>남자 <input type="radio" name="gender">
+                    여자 <input type="radio" name="gender"></radio>
+            </tr>
+            <tr>
+                <td>통신사</td>
+                <td><select>
+                    <option>SKT</option>
+                    <option>LGT</option>
+                    <option>KT</option>
+                    <option selected>알뜰폰</option>
+                </select><input type="number"> </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>가입한 시기</td>
+                <td><input type=""></td>
+            </tr>
+            <tr>
+                <td>하고싶은 말</td>
+                <td><textarea cols="30" rows="5" placeholder="100글자로 써주세요."></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="서버로 전송">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <form action="check">
+        <h3>로그인</h3>
+        <table border="1">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="background: tan;">
+                    <input type="submit" value="서버로 전송" style="background: white; color: black;">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
