@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        font-size: 15px;
+        font-weight: bold;
+        color: blue;
+      }
+      #total {
+        width: 800px;
+        height: 1000px;
+        background: lightcyan;
+      }
+      #top {
+        width: 800px;
+        height: 100px;
+        background: lime;
+        padding: 2px; /* 안쪽여백 4군데 설정*/
+      }
+      #center {
+        width: 800px;
+        height: 500px;
+        padding: 30px;
+      }
+      li {
+        margin-top: 10px;
+        text-align: center;
+        list-style: none;
+        float: left;
+        padding: 15px;
+        width: 100px;
+        height: 50px;
+        border-radius: 50px;
+        /* background: yellow; */
+      }
+      /* ul의 li가 child! child중에서 몇번째인지 지정 */
+      li:nth-child(2n) {
+        background: orange;
+      }
+      li:nth-child(2n + 1) {
+        background: yellow;
+      }
+      /* li:first-child {
+            border-radius: 50px 0 0 50px ;
+        }
+        li:last-child {
+            border-radius: 0 50px 50px 0;
+        } */
+      #top2 {
+        background-color: black;
+        color: yellow;
+        border-radius: 100px 10px;
+        width: 250px;
+        height: 50px;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+      }
+      textarea {
+        background: aqua;
+      }
+      #find {
+        background: black;
+        color: white;
+      }
+      .login {
+        background: blue;
+        border-color: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="total">
+      <div id="top">
+        <ul>
+          <li><a href="member.html">회원가입</a></li>
+          <li><a href="product.html">제품정보</a></li>
+          <li><a href="bbs.html">게시판</a></li>
+          <li><a href="news.html">뉴스</a></li>
+          <li><a href="basket.html">장바구니</a></li>
+        </ul>
+      </div>
+      <div id="top2">장바구니</div>
+      <div id="center">
+        <form action="">
+          <h3>회원가입 화면</h3>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">가입할 id</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ID"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">가입할 pw</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Password"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"> 가입할 name</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          성별 <br />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              남자
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              여자
+            </label>
+          </div>
+          <br />
+          <h3>취미</h3>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              달리기
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckChecked"
+              checked
+            />
+            <label class="form-check-label" for="flexCheckChecked">
+              동영상보기
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              인터넷서핑
+            </label>
+          </div>
+          <br />
+          전화번호 통신사
+          <select class="phone">
+            <option>SKT</option>
+            <option>LGT</option>
+            <option>KT</option>
+            <option selected>알뜰폰</option>
+          </select>
+          <input type="number" /> <br />
+          생년월일 <input type="date" /> <br />
+          가입한 시기 <input type="" /> <br />
+          <div class="input-group">
+            <span class="input-group-text">하고 싶은 말</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+              placeholder="100글자로 써주세요."
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <button type="button" class="btn btn-success">회원가입</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
