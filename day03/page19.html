@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function test(){
+        //     alert('테스트 기능 처리 ...')
+        // }
+        // function add(x, y){
+        //     alert('더하기 기능 처리')
+        //     alert('더하기 값의 결과' + (x+y))
+        // }
+        // function minus(x, y){
+        //     alert('빼기 기능 처리')
+        //     alert('빼기 값의 결과' + (x-y))
+        // }
+        // function plus(x, y, z){
+        //     alert(x + " " + y + "! " + z + "!")
+        // }
+        // function age(x, y){
+        //     alert(x + "님의 내년 나이는 " + (y+1) + "세입니다.")
+        // }
+        function user(){
+            alert('ok')
+            user = document.getElementById('user').value
+            if (user == "root"){
+                result.innerHTML = '<font color=red> 아이디 성공 </font>'
+            }else{
+                result.innerHTML = '<font color=blue> 아이디 실패/재로그인 해주세요. </font>'
+            }
+        }
+        function naver(){
+            naver = document.getElementById('search').value
+            location.href = 'https://kin.naver.com/search/list.nhn?query='+naver
+        }
+        function webtoon(){
+            webtoon = document.getElementById('webtoon').value
+            if (webtoon == '독립일기'){
+                web = '748105'
+            }else if(webtoon  == '육아일기'){
+                web = '732955'
+            }else{
+                web = '749456'
+            }
+            location.href = "https://comic.naver.com/webtoon/list.nhn?titleId=" + web
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 클릭했을 때 test() 기능처리를 하겠다는 의미 -->
+    <!-- <button onclick="test()">테스트를 해보자.</button>
+    <button onclick="add(200, 100)">더 해보자.</button>
+    <button onclick="minus(500, 100)">빼보자.</button>
+    <button onclick="plus('안녕', '바이바이', 'JSP')">문자열 더하기</button>
+    <button onclick="age('홍길동', 100)">나이 출력</button> -->
+
+    아이디 <input type="text" id="user" onblur="user()">
+    <div id="result"></div>
+    <hr>
+    지식인 검색어 <input type="text" id="search" onblur="naver()">
+    <hr>
+    보고 싶은 웹툰 입력 <input type="text" id="webtoon" onblur="webtoon()">
+    
+</body>
+</html>
