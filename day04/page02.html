@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- cdn 연결, dom tree로 읽어들임 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // document.getElementById('b1')
+            $('#b1').click(function(){
+                alert('b1이 클릭됨')
+            })
+            $('#b2').click(function(){
+                alert('b2가 클릭됨')
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="b1">버튼1</button>
+    <button id="b2">버튼2</button>
+</body>
+</html>

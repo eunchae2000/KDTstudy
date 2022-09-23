@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 버튼을 클릭했을 때 처리할 내용을 써보자.
+            $('#b1').click(function(){
+                // 비동기통신(ajax)을 해라
+                $.ajax({
+                    url : "/msn",
+                    success: function(res){
+                        alert("ok")
+                        // $('#d1').append('<span style="color:red"> 응답받은 데이터는 </span>' + res + '<br>')
+                    } // success end
+                }) // ajax end
+            }) // click end
+        }) // $end
+    </script>
+</head>
+<body>
+    <button id="b1">nate 비동기 통신</button>
+    <hr>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+</body>
+</html>
