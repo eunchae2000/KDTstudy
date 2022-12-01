@@ -1,0 +1,10 @@
+package 변수;
+
+public class 친구정보 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

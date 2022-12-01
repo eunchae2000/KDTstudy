@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script type="text/javascript" src="js/cors.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({
+				url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fhei.xml&api_key=fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev',
+				data : {
+					url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fhei.xml',
+					api_key: "fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev",
+					count : 20
+				},
+						success : function(x) { 
+					alert('응답받은 내용: ' + x)
+					list = x.items
+					alert(list.length)
+					for(var i = 0; i<list.length; i++){
+						t = list[i].title
+						p = list[i].pubDate
+						l = list[i].link
+					$('div').append(t + " " + p + " " + l + "<br>")
+					}
+				} //success
+			}) //ajax
+		}) //b1
+		$('#b2').click(function() {
+			$.ajax({
+				url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fheadline.xml&api_key=fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev',
+				data : {
+					url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fheadline.xml',
+					api_key: "fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev",
+					count : 20
+				},
+						success : function(x) { 
+					alert('응답받은 내용: ' + x)
+					list = x.items
+					alert(list.length)
+					for(var i = 0; i<list.length; i++){
+						t = list[i].title
+						p = list[i].pubDate
+						l = list[i].link
+					$('div').append(t + " " + p + " " + l + "<br>")
+					}
+				} //success
+			}) //ajax
+		}) //b1
+		$('#b3').click(function() {
+			$.ajax({
+				url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fsports.xml&api_key=fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev',
+				data : {
+					url : 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.hankyung.com%2Ffeed%2Fsports.xml',
+					api_key: "fboddvc6qfttcyg56jir7zytwwub6oo8abs5csev",
+					count : 20
+				},
+						success : function(x) { 
+					alert('응답받은 내용: ' + x)
+					list = x.items
+					alert(list.length)
+					for(var i = 0; i<list.length; i++){
+						t = list[i].title
+						p = list[i].pubDate
+						l = list[i].link
+						a = "<a href=" + l +">" + t + "</a>"
+					$('div').append(a + "---> " + t + " " + p + " " + l + "<br>")
+					}
+				} //success
+			}) //ajax
+		}) //b1
+	}) //$
+</script>
+</head>
+<body bgcolor="lightgreen">
+	신문뉴스 데이터 받아오기(ajax로)
+	<br>
+	<button style='color: blue; background: pink' id='b1'>옌예인 기사(한경)</button>
+	<button style='color: blue; background: pink' id='b2'>최신 기사(한경)</button>
+	<button style='color: blue; background: pink' id='b3'>스포츠 기사(한경)</button>
+
+	
+	<hr color="green">
+	<div id="result"></div>
+</body>
+</html>

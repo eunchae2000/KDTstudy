@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.proxy": {
+        "enable": true,
+        "baseUri": "/msn",
+        "proxyUri": "http://www.nate.com"
+    }
+}

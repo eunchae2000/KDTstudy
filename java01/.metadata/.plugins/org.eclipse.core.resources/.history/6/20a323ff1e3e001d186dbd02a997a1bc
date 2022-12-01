@@ -1,0 +1,13 @@
+package test;
+
+public class test5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Double PI = 3.14;
+		Double cm = 2.2;
+		Double result = PI*(cm*cm);
+		System.out.println(result);
+	}
+
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // site = prompt('어디 사이트로 자주 가나요')
+
+      // if(site == '네이버'){
+      //     // 브라우저에게 네이버를 요청하라고 제어
+      //     location.href = "http://www.naver.com"
+      // }else if(site == '구글'){
+      //     location.href = 'http://www.google.com'
+      // }else{
+      //     // 위의 조건 다 아니면
+      //     location.href = "http://www.daum.net"
+      // }
+
+      // 1. 확인문제
+      where = prompt("당신은 어디로 가고 싶나요?");
+      if (where == "산") {
+        location.href = "https://namu.wiki/w/%ED%95%9C%EB%9D%BC%EC%82%B0";
+      } else if (where == "바다") {
+        location.href = "https://namu.wiki/w/%EB%B0%94%EB%8B%A4";
+      } else {
+        location.href = "https://namu.wiki/w/%EA%B0%95";
+      }
+
+      // 2. 확인문제
+      id = prompt("ID를 입력해주세요.");
+      if (id == "admin") {
+        alert("브라우저에 관리자로 로그인이 되었습니다.");
+      } else {
+        alert("브라우저에 일반 유저로 로그인이 되었습니다.");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+l

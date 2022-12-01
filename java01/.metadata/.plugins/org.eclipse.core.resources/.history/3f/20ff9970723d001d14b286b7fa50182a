@@ -1,0 +1,10 @@
+package 변수;
+
+public class 내년나이계산 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

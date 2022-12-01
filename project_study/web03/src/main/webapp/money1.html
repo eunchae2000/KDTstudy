@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>환율 정보</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			wonValue = $('#won').val()
+
+			$.ajax({
+				url : 'won.jsp',
+				data : {
+					won: wonValue
+				},
+				success : function(result) { //x=jsp파일의 실행결과
+					alert('서버와의 통신 성공')
+					$('#dollar1').html('<font color=red>원화를 달러로 환율 결과: ' + result + '</font>')
+				}
+			})
+		})
+		$('#b2').click(function() {
+			dollarValue = $('#dollar').val()
+			//원하는 곳에서 아무때나 페이지를 넘기지 않고, 서버와
+			//통신하고자 하는 경우 ajax(비동기통신)
+			$.ajax({
+				url : 'dollar.jsp',
+				data : {
+					dollar : dollarValue
+				},
+				success : function(result) { //x=jsp파일의 실행결과
+					alert('서버와의 통신 성공')
+					$('#won1').html('<font color=red>달러를 원화로 환율 결과 : ' + result + '</font>')
+				}
+			})
+		})
+	})
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" placeholder="원화를 입력하세요" id="won">
+		<button id="b1">환율 계산하기</button>
+		<br>
+		<h3>=  <div id="dollar1"></div> </h3>
+		<br>
+		
+	</div>
+
+
+	<div>
+		<input type="text" placeholder="달러를 입력하세요" id="dollar">
+		<button id="b2">환율 계산하기</button>
+		<br>
+		<h3>=  <div id="won1"></div></h3>
+		<br>
+		
+	</div>
+
+</body>
+</html>

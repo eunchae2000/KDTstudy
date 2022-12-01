@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#b1').click(function(){
+                // 입력
+                price = $('#price').val()
+                count = $('#count').val()
+                
+                // 처리
+                price2 = parseInt(price)
+                count2 = parseInt(count)
+
+                // 출력
+                alert(price2 * count2)
+            })
+        })
+    </script>
+</head>
+<body>
+    커피 가격: <input type="text" id="price"> <br>
+    커피 수량: <input type="text" id="count"> <br>
+    <button id="b1">커피 결제금액 확인</button>
+</body>
+</html>

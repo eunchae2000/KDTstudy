@@ -1,0 +1,10 @@
+@charset "UTF-8";
+body{
+	background: Green; /* 컨트롤 + 쉬프트 + (자동주석) */
+	color: white; /* 글자색 지정 */
+	text-align:center;
+}
+
+td{
+	text-algin: center;
+}

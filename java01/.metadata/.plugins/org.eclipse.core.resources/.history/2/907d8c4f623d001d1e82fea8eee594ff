@@ -1,0 +1,10 @@
+package 변수;
+
+public class 나의첫부품 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

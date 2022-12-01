@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$('#b1').click(function() {
+		alert('되냐 안되나..')
+		$.ajax({
+			url: "ok.html",
+			success: function(x) {
+				// ok.html 요청 시 성공하면 처리할 부분
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d1').html('성공, 받은 데이터는 ' + x)
+			},
+			error: function(e) {
+				// ok.html 요청 시 실패하면 처리할 부분
+				alert('실패, 실패의 내용 ' + e)
+			} // error
+		}) // ajax
+	}) //b2
+	$('#b2').click(function() {
+		alert('되냐 안되나..')
+		$.ajax({
+			url: "tour.html",
+			success: function(x) {
+				// ok.html 요청 시 성공하면 처리할 부분
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d2').html('성공, 받은 데이터는 ' + x)
+			},
+			error: function(e) {
+				// ok.html 요청 시 실패하면 처리할 부분
+				alert('실패, 실패의 내용 ' + e)
+			} // error
+		}) // ajax
+	}) //b2
+	$('#b3').click(function() {
+		alert('되냐 안되나..')
+		$.ajax({
+			url: "weather.html",
+			success: function(x) {
+				// ok.html 요청 시 성공하면 처리할 부분
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d3').html('성공, 받은 데이터는 ' + x)
+			},
+			error: function(e) {
+				// ok.html 요청 시 실패하면 처리할 부분
+				alert('실패, 실패의 내용 ' + e)
+			} // error
+		}) // ajax
+	}) //b2
+})
+</script>
+</head>
+<body>
+<!-- 	<a href="ok.html">공공데이터 포털 요청</a>
+	<a href="weather.html">공공데이터 포털 요청</a> -->
+	<button id="b1">공공데이터 포탈 요청</button>
+	<button id="b2">주변 맛집 정보 요청</button>
+	<button id="b3">기상청 정보 요청</button>
+	<hr>
+	<div id=d1 style="background: yellow;"></div>
+	<br>
+	<div id=d2 style="background: pink;"></div>
+	<br>
+	<div id=d3 style="background: lime;"></div>
+	<br>
+</body>
+</html>

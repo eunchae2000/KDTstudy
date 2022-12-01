@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$('#b1').click(function() {
+		alert('되냐 안되나..')
+		$.ajax({
+			url: "data/rank.xml",
+			success: function(x) {
+				// ok.html 요청 시 성공하면 처리할 부분
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d1').html('성공, 받은 데이터는 ' + x + "<br>")
+				list = $(x).find('rank')
+				alert(list.length + "개")
+				for (var i = 0; i<list.length; i++){
+					name = $(list[i]).find('name').text()
+					tel = $(list[i]).find('tel').text()
+					$('#d1').append(name + ", " + tel + "<br>")
+				}
+			},
+			error: function(e) {
+				// ok.html 요청 시 실패하면 처리할 부분
+				alert('실패, 실패의 내용 ' + e)
+			} // error
+		}) // ajax
+	}) //b2
+	$('#b2').click(function() {
+		alert('되냐 안되냐..')
+		$.ajax({
+			url : "data/rank.json",
+			success : function(x) {
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d2').html('성공, 받은 데이터는 ' + x + "<br>")
+				list = x.rank //받은 데이터에서 rank키의 값을 리스트(배열)로 추출
+				alert(list.length +"개")
+				for (i = 0; i < list.length; i++) {
+					n = list[i].name
+					t = list[i].tel
+					$('#d2').append(n + ',' + t + '<br>')
+				}
+			},
+			error : function(e) {
+				alert('실패, 실패의 내용 ' + e)
+			} //error
+		}) //ajax
+	}) //b2
+	$('#b3').click(function() {
+		alert('되냐 안되나..')
+		$.ajax({
+			url: "data/rank3.xml",
+			success: function(x) {
+				// ok.html 요청 시 성공하면 처리할 부분
+				alert('성공, 받은 데이터는 ' + x)
+				$('#d3').html('성공, 받은 데이터는 ' + x + "<br>")
+				list = $(x).find('winner')
+				alert(list.length + "개")
+				for (var i = 0; i<list.length; i++){
+					year = $(list[i]).find('year').text()
+					class1 = $(list[i]).find('class').text()
+					name = $(list[i]).find('name').text()
+					field = $(list[i]).find('field').text()
+					$('#d3').append(year + ", " + class1 + ", " + name + ", " + field + "<br>")
+				}
+			},
+			error: function(e) {
+				// ok.html 요청 시 실패하면 처리할 부분
+				alert('실패, 실패의 내용 ' + e)
+			} // error
+		}) // ajax
+	}) //b2
+})
+</script>
+</head>
+<body>
+<!-- 	<a href="ok.html">공공데이터 포털 요청</a>
+	<a href="weather.html">공공데이터 포털 요청</a> -->
+	<button id="b1">XML 받아오기</button>
+	<button id="b2">JSON 받아오기</button>
+	<button id="b3">XML 받아오기2</button>
+	<hr>
+	<div id=d1 style="background: yellow;"></div>
+	<br>
+	<div id=d2 style="background: pink;"></div>
+	<br>
+	<div id=d3 style="background: lightgreen;"></div>
+	<br>
+</body>
+</html>

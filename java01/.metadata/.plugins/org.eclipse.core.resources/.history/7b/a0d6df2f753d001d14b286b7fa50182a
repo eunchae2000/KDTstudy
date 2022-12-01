@@ -1,0 +1,12 @@
+package 변수;
+
+public class Exam02 {
+
+	public static void main(String[] args) {
+		double cm = 199.9;
+		double cm1 = (cm-100)*0.9;
+		System.out.println(cm1);
+
+	}
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다음 주소 API</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+window.onload = function(){
+    document.getElementById("addressClick").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        
+        new daum.Postcode({
+            oncomplete: function(data) { 
+            	var roadAddr = data.roadAddress; 
+                var extraRoadAddr = ''; 
+
+ 
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+
+
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("roadAddress").value = roadAddr;
+                document.getElementById("jibunAddress").value = data.jibunAddress;
+                
+
+                if(roadAddr !== ''){
+                    document.getElementById("plusAddress").value = extraRoadAddr;
+                } else {
+                    document.getElementById("plusAddress").value = '';
+                }
+
+                var guideTextBox = document.getElementById("guide");
+
+                if(data.autoRoadAddress) {
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                    guideTextBox.style.display = 'block';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();
+    });
+}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th><input type="text" id="postcode" name="postcode" placeholder="우편번호"/></th>
+			<td><input type="button" id="addressClick" onclick="addressClick" value="우편번호 찾기"></td>
+		</tr>
+		<tr>
+			<th><input type="text" id="roadAddress" name="address" placeholder="도로명 주소"/></th>
+			<td><input type="text" id="jibunAddress" name="address" placeholder="지번 주소"/></td>
+		</tr>
+		<tr>
+			<th><input type="text" id="detailAddress" name="address" placeholder="상세 주소"/></th>
+			<td><input type="text" id="plusAddress" name="address" placeholder="참고 항목"/></td>
+		</tr>
+	</table>
+
+	
+</body>
+
+</html>

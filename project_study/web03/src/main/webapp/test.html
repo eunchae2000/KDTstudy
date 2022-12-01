@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+	
+</script>
+
+<script>
+	//$ ==> body태그의미, $() ==> body부분부터 먼저 읽어서 램에 준비시켜줘!
+	// body 부분을 DOM-Tree로 읽어서 준비가 되면, 
+	// 입력값으로 있는 익명함수를 실행해주세요!
+	$(function() { //익명함수
+		// button이 클릭되면, 함수부분을 호출해주세요.(콜백함수)
+		// html 태그 중에서 선택할 수 있는 방법(태크명, 클래스명 , id명)
+		$('#button1')
+				.click(
+						function() {
+							word1 = $('#word1').val()
+							location.href = "https://section.blog.naver.com/Search/Post.naver?keyword="
+									+ word1
+						})
+	})
+
+	$(function() { //익명함수
+		// button이 클릭되면, 함수부분을 호출해주세요.(콜백함수)
+		// html 태그 중에서 선택할 수 있는 방법(태크명, 클래스명 , id명)
+		$('#button2')
+				.click(
+						function() {
+							word2 = $('#word2').val()
+							location.href = "https://section.blog.naver.com/Search/Post.naver?keyword="
+									+ word2
+						})
+	})
+</script>
+
+</head>
+<body>
+	<div style="padding:10px;">
+		당신은 어디로 가고 싶나요? (산, 바다, 강 중 선택): <input id="word1">
+		<button id="button1">네이버 검색 시작</button>
+		<br>
+	</div>
+	<div style="padding:10px;">
+		당신은 사고 싶은것은 무엇인가요?: <input id="word2">
+		<button id="button2">네이버 검색 시작</button>
+	</div>
+
+
+</body>
+</html>

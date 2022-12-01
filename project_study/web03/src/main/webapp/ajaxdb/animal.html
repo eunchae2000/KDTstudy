@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(
+				function() {
+					$.ajax({
+						url : '../data/animal.json',
+						success : function(doc) {
+							$(doc).each(
+									function(index, animal) {
+										console.log(index + " >> " + animal)
+										id = animal.id //
+										name = animal.name
+										gender = animal.gender
+										country = animal.country
+										console.log(index + " >> " + id + " "
+												+ name + " " + gender + " "
+												+ country)
+
+										$.ajax({
+											url : 'animal.jsp',
+											data : {
+												id : id,
+												name : name,
+												gender : gender,
+												country : country
+											},
+											success : function(table) {
+												$('div').empty()
+												$('div').html(table)
+											}
+										})
+									})
+						}
+					})
+				})
+	})
+</script>
+</head>
+<body>
+	<button id="b1">animal.json 읽어오기</button>
+	<hr color="green">
+	<div id="result"></div>
+</body>
+</html>
